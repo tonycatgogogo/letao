@@ -1,0 +1,103 @@
+/*商品部分*/
+.ht_nav {
+  width: 100%;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+.ht_nav a {
+  display: block;
+  float: left;
+  width: 33.333%;
+}
+.ht_nav a img {
+  width: 100%;
+  display: block;
+}
+/*默认选中区*/
+.ht_active {
+  border-top: 1px solid #ccc;
+  margin-top: 15px;
+  padding: 0 10px;
+}
+.ht_active a:nth-child(2n+1) {
+  width: 67.1%;
+  display: block;
+  float: left;
+}
+.ht_active a:nth-child(2n+1) img{
+  width: 50%;
+  float: left;
+}
+.ht_active a:nth-child(2) {
+  width: 32.9%;
+  display: block;
+  float: right;
+}
+.ht_active a:nth-child(2) img{
+  width: 100%;
+}
+/*商标部分*/
+.ht_brand {
+  padding: 0 10px;
+}
+.ht_brand > img {
+  display: block;
+  width: 100%;
+}
+.ht_brand ul {
+  width: 100%;
+}
+.ht_brand ul li{
+  width: 25%;
+  float: left;
+}
+.ht_brand ul li a{
+  display: block;
+  width: 100%;
+}
+.ht_brand ul li a img{
+  display: block;
+  width: 100%;
+}
+/*产品区*/
+.ht_product {
+  padding: 0 10px;
+  margin-top: 10px;
+}
+.ht_product > img {
+  width: 100%;
+}
+.ht_product a {
+  float: left;
+  width: 50%;
+  padding: 0 5px;
+  margin-bottom: 10px;
+}
+.ht_product a .ht_item {
+  width: 100%;
+  box-shadow: 0 0 5px #ccc;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.ht_product a .ht_item img {
+  width: 100%;
+  display: block;
+}
+.ht_product .ht_item .name {
+  padding: 0 10px;
+  font-size: 12px;
+}
+.ht_product .ht_item .price {
+  font-size: 12px;
+  margin-right: 10px;
+  color: #f30;
+}
+.ht_product .ht_item .oldPrice {
+  font-size: 12px;
+  color: #ccc;
+  text-decoration: line-through;
+}
+.ht_product .ht_item button {
+  background: #ffbc10;
+  color: #fff;
+}

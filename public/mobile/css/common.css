@@ -1,0 +1,131 @@
+body {
+  height: 100%;
+  width: 100%;
+}
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.container .ht_top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  background: #ffbc10;
+  color: #fff;
+}
+.container .ht_top a {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 0;
+  display: block;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+}
+.container .ht_top .icon_back {
+  left: 0;
+}
+.container .ht_top .icon_search {
+  right: 0;
+}
+.container .ht_top h3 {
+  width: 100%;
+  padding: 0 40px;
+  text-align: center;
+  line-height: 45px;
+  font-size: 18px;
+  margin: 0;
+  font-weight: normal;
+}
+.container .ht_foot {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 55px;
+  background: #ffbc10;
+}
+.container .ht_foot ul {
+  width: 100%;
+}
+.container .ht_foot ul li {
+  float: left;
+  width: 25%;
+  text-align: center;
+  padding: 10px;
+}
+.container .ht_foot ul li a{
+  display: block;
+  color: #fff;
+}
+.container .ht_foot ul li.active a {
+  color: #069;
+}
+.container .ht_foot ul li.active a p {
+  color: #069;
+}
+.container .ht_foot ul li span{
+  display: block;
+  font-size: 20px;
+  width: 100%;
+}
+.container .ht_foot ul li p{
+  color: #fff;
+  font-size: 12px;
+}
+.container .ht_main {
+  width: 100%;
+  height: 100%;
+  padding: 45px 0 55px 0;
+}
+.container .ht_main .ht_content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+body {
+  background: #fff;
+}
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.ht_search {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+}
+.ht_search input {
+  display: block;
+  width: 100%;
+  height: 30px;
+  border: 1px solid #ccc;
+  line-height: 28px;
+  background: #fff;
+  font-size: 12px;
+  margin-bottom: 0;
+  padding-right: 30px;
+}
+.ht_search a {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 60px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  color: #fff;
+  background: #ffbc10;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}

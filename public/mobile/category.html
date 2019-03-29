@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!--ios是否运行创建快捷启动方式-->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <!--ios顶部通知栏的样式 黑色-->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>hito嗨淘-分类</title>
+    <link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="assets/mui/css/mui.min.css">
+    <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/category.css">
+</head>
+<body>
+<div class="container">
+    <header class="ht_top">
+        <a href="javascript:history.back()" class="icon_back fa fa-arrow-left"></a>
+        <h3>分类查询</h3>
+        <a href="search.html" class="icon_search fa fa-search"></a>
+    </header>
+    <main class="ht_main">
+        <div class="ht_content">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <div class="cate_left">
+                        <ul></ul>
+                    </div>
+                    <div class="cate_right">
+                        <ul></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="ht_foot">
+        <ul>
+            <li><a href="index.html"><span class="fa fa-home"></span>
+                <p>首页</p></a></li>
+            <li class="active"><a href="category.html"><span class="fa fa-bars"></span>
+                <p>分类</p></a></li>
+            <li><a href="cart.html"><span class="fa fa-shopping-cart"></span>
+                <p>购物车</p></a></li>
+            <li><a href="user.html"><span class="fa fa-user"></span>
+                <p>会员中心</p></a></li>
+        </ul>
+    </footer>
+</div>
+<script type="text/x-artTemplate" id="firstTemplate">
+    <% for( var i = 0; i < rows.length; i++) { %>
+        <li class="<%=i==0?'active':''%>"><a href="javascript:;" data-id="<%=rows[i].id%>"><%=rows[i].categoryName%></a></li>
+    <% } %>
+</script>
+<script type="text/x-artTemplate" id="secondTemplate">
+    <% if(rows.length){  %>
+    <% for(var i = 0 ; i < rows.length ; i ++){ %>
+    <li><a href="javascript:;"><img src="<%=rows[i].brandLogo%>" alt=""><p><%=rows[i].brandName%></p></a></li>
+    <% } %>
+    <% }else{ %>
+    <p>当前分类没有数据</p>
+    <% } %>
+</script>
+<script src="assets/mui/js/mui.min.js"></script>
+<script src="assets/zepto/zepto.min.js"></script>
+<script src="assets/artTemplate/template-native.js"></script>
+<script src="js/common.js"></script>
+<script src="js/category.js"></script>
+</body>
+</html>

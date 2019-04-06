@@ -16,43 +16,46 @@
     <link rel="stylesheet" href="../assets/fontAwesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/user.css">
-    <title>login</title>
+    <title>用户登录</title>
 </head>
 <body>
 <!--首页内容-->
-<div class="ct_container">
-    <header class="ct_header">
+<div class="container">
+    <header class="ht_top">
         <a href="javascript:history.back();" class="left"><span class="fa fa-arrow-left"></span></a>
         <h3>login</h3>
     </header>
-    <div class="ct_content">
-        <div class="ct_wrapper">
-            <form class="mui-input-group">
-                <div class="mui-input-row">
-                    <label>用户名</label>
-                    <input name="username" type="text" class="mui-input-clear" placeholder="请输入用户名">
-                </div>
-                <div class="mui-input-row">
-                    <label>密码</label>
-                    <input name="password" type="password" class="mui-input-password" placeholder="请输入密码">
-                </div>
-                <div class="mui-button-row">
-                    <button id="submit" type="button" class="mui-btn mui-btn-primary" >确认</button>
-                    <button type="button" class="mui-btn mui-btn-danger" >取消</button>
-                </div>
-            </form>
+    <div class="ht_main">
+        <div class="form_box">
+            <div class="mui-input-row">
+                <input name="name" type="text" placeholder="用户名/手机号">
+            </div>
+            <div class="mui-input-row">
+                <input name="pass" type="password" placeholder="密码" class="mui-input-password">
+                <span class="mui-icon mui-icon-eye"></span>
+            </div>
+            <a href="javascript:;" class="mui-btn mui-btn-primary btn_login">登录</a>
+            <div class="mui-input-row ht_text">
+                <a href="register.html">免费注册</a>
+            </div>
         </div>
     </div>
-    <footer class="ct_footer">
-        <a class="tab_home fa fa-home now" href="../index.html"><span>首页</span></a>
-        <a class="tab_cate fa fa-bars" href="../category.html"><span>分类</span></a>
-        <a class="tab_cart fa fa-shopping-cart" href="../user/cart.html"><span>购物车</span></a>
-        <a class="tab_user fa fa-user" href="../user/index.html"><span>会员中心</span></a>
+    <footer class="ht_foot">
+        <ul>
+            <li><a href="../index.html"><span class="fa fa-home"></span>
+                <p>首页</p></a></li>
+            <li><a href="../category.html"><span class="fa fa-bars"></span>
+                <p>分类</p></a></li>
+            <li><a href="cart.html"><span class="fa fa-shopping-cart"></span>
+                <p>购物车</p></a></li>
+            <li><a href="index.html"><span class="fa fa-user"></span>
+                <p>会员中心</p></a></li>
+        </ul>
     </footer>
 </div>
 <script src="../assets/mui/js/mui.min.js"></script>
 <script src="../assets/zepto/zepto.min.js"></script>
 <script src="../js/common.js"></script>
-<script src="../js/login.js"></script>
+<script src="../js/user/login.js"></script>
 </body>
 </html>

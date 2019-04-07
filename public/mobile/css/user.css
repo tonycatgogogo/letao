@@ -24,11 +24,18 @@ body{
   width: 60%;
   float: left;
 }
+.mui-input-row input{
+  font-size: 14px;
+}
+.mui-input-row a {
+  font-size: 12px;
+}
 .mui-input-row .btn_getCode{
   width: 35%;
   float: left;
   margin-left: 5%;
   height: 40px;
+  line-height: 20px;
 }
 
 

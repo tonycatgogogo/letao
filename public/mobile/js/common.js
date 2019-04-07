@@ -19,7 +19,7 @@ HT.getParamsByUrl = function () {
 };
 HT.getItemById = function (arr,id) {
   var obj = null;
-  arr.forEach(function (item,id) {
+  arr.forEach(function (item,i) {
     if(item.id == id){
       obj = item;
     }
@@ -36,14 +36,19 @@ HT.loginAjax = function (params) {
     type:params.type || 'get',
     data:params.data || '',
     dataType:params.dataType ||'json',
+    beforeSend:function(){
+      params.beforeSend && params.beforeSend();
+    },
     success:function (data) {
       /*未登录的处理 {error: 400, message: "未登录！"}
        所有的需要登录的接口 没有登录返回这个数据*/
-      if(data.error == 400){
+      if(data && data.error == 400){
         location.href = HT.loginUrl+'?returnUrl=' + location.href;
         return false
       }else {
-        params.success && params.success(data);
+        setTimeout(function(){
+          params.success && params.success(data);
+        },1000);
       }
     },
     error:function () {

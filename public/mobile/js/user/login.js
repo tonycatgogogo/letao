@@ -26,17 +26,17 @@ $(function () {
     })
   })
 });
-// var getLoginData = function (data, callback) {
-//   HT.loginAjax({
-//     type: 'post',
-//     url: '/user/login',
-//     data: data,
-//     dataType: 'json',
-//     beforeSend: function () {
-//       $('.btn_login').html('正在登录...');
-//     },
-//     success: function (data) {
-//       callback && callback(data)
-//     }
-//   })
-// };
+var getLoginData = function (data, callback) {
+  HT.loginAjax({
+    type: 'post',
+    url: '/user/login',
+    data: data,
+    dataType: 'json',
+    beforeSend: function () {
+      $('.btn_login').html('正在登录...');
+    },
+    success: function (data) {
+      callback && callback(data)
+    }
+  })
+};

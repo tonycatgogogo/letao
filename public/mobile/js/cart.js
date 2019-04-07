@@ -3,6 +3,7 @@
  */
 $(function () {
   var $mEdit = $('.mui-table-view');
+  var $body = $('body');
   mui('.mui-scroll-wrapper').scroll({
     scrollY: true, //是否竖向滚动
     scrollX: false, //是否横向滚动
@@ -24,23 +25,22 @@ $(function () {
           setTimeout(function () {
             getCartData(function (data) {
               /*渲染页面*/
-              console.log(data);
-              $('.mui-table-view').html(template('cart', data));
+              $mEdit.html(template('cart', data));
               that.endPulldownToRefresh();
               /*注册刷新事件 防止多次绑定  先解绑再次绑定*/
               $('.fa-refresh').off('tap').on('tap', function () {
                 that.pulldownLoading()
               })
             })
-          }, 500)
+          }, 100)
         }
       }
     }
   });
   /*2.侧滑的时候  点击删除  弹出对话框 确认框*/
-  $mEdit.on('tap', 'mui-icon-compose', function () {
+  $mEdit.on('tap', '.mui-icon-compose', function () {
     var id = $(this).parent().attr('data-id');
-    var item = HT.getItemById(window.data.data, id);
+    var item = HT.getItemById(window.cartData.data, id);
     var html = template('edit', item);
     mui.confirm(html.replace(/\n/g, ''), '商品编辑', ['确认', '取消'], function (e) {
       if (e.index == 0) {
@@ -56,12 +56,19 @@ $(function () {
           },
           dataType: 'JSON',
           success: function (data) {
-            if (data.success == true) {
+            if (data.success) {
               /*窗口关闭*/
               /*列表更新*/
               item.num = num;
               item.size = size;
-              $('.mui-table-view').html(template('cart', window.data))
+              $mEdit.html(template('cart', window.cartData));
+              setAmount();
+              // var that = this;
+              // setTimeout(function () {
+              //     /*渲染页面*/
+              //     $mEdit.html(template('cart', window.cartData));
+              //     that.endPulldownToRefresh();
+              // }, 100)
             }
           }
         })
@@ -69,8 +76,7 @@ $(function () {
       }
     })
   });
-  var $body = $('body');
-  $body.on('tap', '.btn-size', function () {
+  $body.on('tap','.btn_size',function () {
     $(this).addClass('active').siblings().removeClass('active')
   });
   $body.on('tap', '.p_number span', function () {
@@ -92,7 +98,7 @@ $(function () {
         }
       $input.val(currNum);
       });
-  $mEdit.on('tap', 'mui-icon-trash', function () {
+  $body.on('tap', '.mui-icon-trash', function () {
     var $this = $(this);
     var id = $this.parent().attr('data-id');
     mui.confirm('您确定删除商品？', '商品删除', ['确认', '取消'], function (e) {
@@ -105,8 +111,8 @@ $(function () {
           },
           dataType:'json',
           success:function (data) {
-            if(data.success == true){
-              $this.parent().remove();
+            if(data.success){
+              $this.parent().parent().remove();
               setAmount()
             }
           }
